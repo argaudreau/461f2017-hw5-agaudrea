@@ -1,0 +1,144 @@
+/*
+    Name: Adam Gaudreau, adam_gaudreau@student.uml.edu
+    Computer Science Department, UMass Lowell
+    Comp.4610, GUI Programming I
+    File: /usr/cs/2018/agaudrea/public_html/461f2017/hw5/css/index.css
+    Created: 9 November 2017
+    Last updated by AG: 9 November 2017
+*/
+
+* {
+    font-family: 'Roboto Slab', serif;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    background-color: #E0E0E0;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.header {
+    text-align: left;
+    color: #ffffff;
+    background-color: #673AB7;
+    min-height: 75px;
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+    padding: 20px;
+    font-family: 'Lobster', cursive;
+}
+
+.progress-main {
+    width: 100%;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+.progress-item {
+    padding: 10px 5px 10px 5px;
+}
+
+.progress-bar {
+    max-height: 5px;
+    background-color: #673AB7;
+    width: 33.33%;
+}
+
+.progress-circle {
+    float: left;
+    height: 15px;
+    width: 15px;
+    margin: 5px 10px 0 0;
+    background-color: #9E9E9E;
+    border-radius: 50%;
+}
+
+.complete {
+    background-color: #673AB7;
+}
+
+.incomplete {
+    background-color: #F5F5F5;
+}
+
+.btn-custom {
+    background-color: #673AB7;
+    border-color: #512DA8;
+    margin: 0 20px 0 20px;
+}
+.btn-custom:hover {
+    background-color: #4527A0;
+    border-color: #311B92;
+}
+.btn-custom:disabled {
+    background-color: #9575CD;
+    border-color: #7E57C2;
+}
+
+#next1, #next2 {
+    float: right;
+}
+
+.div-input {
+    margin: 20px 0 20px 0;
+}
+
+.vehicle-title {
+    color: #512DA8;
+    text-align: center;
+    margin: 20px 0 20px 0;
+    font-family: 'Lobster', cursive;
+}
+
+.vehicle-option {
+    color: #512DA8;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+}
+
+.vehicle-sub {
+    color: #512DA8;
+    text-align: center;
+}
+
+.vehicle-card {
+    background-color: #ffffff;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    margin: 10px 20px 10px 20px;
+    padding: 20px;
+}
+
+.error {
+    color: #EF5350;
+}
+
+.cost-per-mpg {
+    color: #0277BD;
+}
+
+.actual-cost {
+    color: #EF6C00;
+}
+
+.key {
+    text-align: left;
+    border-color: #424242;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.key-header {
+    color: #512DA8;
+}
+
+.header-font {
+    font-family: 'Lobster', cursive;
+}

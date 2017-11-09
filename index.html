@@ -1,0 +1,147 @@
+<!--
+  Name: Adam Gaudreau, adam_gaudreau@student.uml.edu
+  Computer Science Department, UMass Lowell
+  Comp.4610, GUI Programming I
+  File: /usr/cs/2018/agaudrea/public_html/461f2017/hw5/index.html
+  Created: 9 November 2017
+  Last updated by AG: 9 November 2017
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Adam's HW5</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Lobster" rel="stylesheet">  
+  </head>
+  <body>
+    <div class="header">
+      <h3>True Vehicle Cost Calculator</h3>
+    </div>
+    <div class="progress-main container">
+      <div class="row">
+        <div class="col-md-4 nopadding">
+          <div id="prog-main-1" class="progress-item">
+            <div id="prog-circ-1" class="progress-circle complete"></div>
+            Number of vehicles
+          </div>
+        </div>
+        <div class="col-md-4 nopadding">
+          <div id="prog-main-2" class="progress-item incomplete">
+            <div id="prog-circ-2" class="progress-circle"></div>
+            Costs per vehicle
+          </div>
+        </div>
+        <div class="col-md-4 nopadding">
+          <div id="prog-main-3" class="progress-item incomplete">
+            <div id="prog-circ-3" class="progress-circle"></div>
+            Results
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 nopadding incomplete">
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+    <main class="main container">
+      <div id="step1">
+        <h2 class="vehicle-title">Step 1</h2>
+        <p class="vehicle-sub">Enter the number of vehicles you will be comparing, as well as the current gas price.</p>
+        <div class="div-input">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="vehicle-card">
+                <h4 class="key-header header-font">Welcome</h4>
+                <p>This small webpage will compare different models of cars based on their Manufacturer's Suggested Retail Price (MSRP) and their fuel economy in miles per gallon (MPG). After inputting each vehicle's information, the cost per mile per gallon and cost of fuel over 100,000 miles will be calculated and displayed in a dynamic table. You can view this page on GitHub <a href="https://github.com/argaudreau/461f2017-hw5-agaudrea" target="_blank">here</a>.</p>
+                <form class="cmxform" id="step1Form" method="get" action="">
+                  <fieldset>
+                    <legend>All fields are required.</legend>
+                    <p>
+                      <label for="input-num-vehicles">Number of Vehicles</label>
+                      <input type="number" class="form-control" id="input-num-vehicles" name="num-vehicles" required>
+                    </p>
+                    <p>
+                      <label for="input-gas-price">Current gas price</label>
+                      <input type="number" class="form-control" id="input-gas-price" name="gas-price" required>
+                    </p>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="next1" class="btn btn-primary btn-custom" type="submit">Next &rsaquo;</button>
+      </div>
+      <div id="step2">
+        <h2 class="vehicle-title">Step 2</h2>
+        <p class="vehicle-sub">Enter the MSRP and MPG of each vehicle.</p>
+        <div class="div-input">
+          <form class="cmxform" id="step2Form" method="get" action="">
+            <div class="row" id="option-root">
+              <div id="template" class="col-md-4" hidden>
+                <div class="vehicle-card">
+                  <p class="vehicle-option"></p>
+                  <fieldset>
+                    <p>
+                      <label>MSRP</label>
+                      <input type="number" class="form-control msrp">
+                    </p>
+                    <p>
+                      <label>MPG</label>
+                      <input type="number" class="form-control mpg">
+                    </p>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </form>
+          <button id="next2" class="btn btn-primary btn-custom">Next &rsaquo;</button>
+          <button id="prev2" class="btn btn-primary btn-custom">&lsaquo; Previous</button>
+        </div>
+      </div>
+      <div id="step3">
+        <h2 class="vehicle-title">Results</h2>
+        <div class="div-input">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="vehicle-card">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr id="table-prices">
+                      <th>MSRP / MPG</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-body"></tbody>
+                </table>
+                <div class="key">
+                  <h5 class="key-header">Key</h5>
+                  <h6><span class="cost-per-mpg">BLUE</span> text denotes the cost per mile per gallon the vehicle offers.</h6>
+                  <h6><span class="actual-cost">ORANGE</span> text denotes the cost of the car, plus the cost of the gas for 100,000 miles.</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="prev3" class="btn btn-primary btn-custom">&lsaquo; Previous</button>
+      </div>
+    </main>
+    <!-- Bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <!-- JQuery Validate Plugin -->
+    <script src="js/jquery.validate.min.js"></script>
+    <!-- Custom scripts -->
+    <script src="js/index.js"></script>
+  </body>
+</html>
